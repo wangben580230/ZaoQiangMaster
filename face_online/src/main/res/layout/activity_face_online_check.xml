@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2017 Baidu, Inc. All Rights Reserved.
+  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+                android:gravity="center">
+
+    <TextView android:id="@+id/result_tip_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22dp"/>
+    <TextView android:id="@+id/online_faceliveness_tip_tv"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="20dp"
+              android:textSize="16dp"/>
+    <TextView android:id="@+id/score_tv"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="20dp"
+              android:textSize="16dp"/>
+    <ImageView android:id="@+id/avatar_iv"
+            android:layout_width="200dp"
+            android:layout_height="200dp"/>
+    <Button
+             android:id="@+id/retry_btn"
+             android:layout_marginTop="20dp"
+             android:layout_width="250dp"
+             android:layout_height="48dp"
+             android:visibility="gone"
+             android:text="重试"/>
+
+</LinearLayout>

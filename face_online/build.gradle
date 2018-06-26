@@ -1,0 +1,61 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+    defaultConfig {
+//        applicationId  "com.szxc.face_demo"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        useLibrary 'org.apache.http.legacy'
+
+        ndk {
+            abiFilters  "armeabi-v7a"  // 指定要ndk需要兼容的架构(这样其他依赖包里mips,x86,armeabi,arm-v8之类的so会被过滤掉)
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+//    signingConfigs {
+//
+//
+//        def alias = "androidfacekey"
+//        def password = "123456"
+//        def filePath = "android_face.jks"  //签名文件路径 如：../faceprint.jks
+//
+//        debug {
+//            keyAlias alias
+//            keyPassword password
+//            storeFile file(filePath)
+//            storePassword(password)
+//        }
+//        release {
+//            keyAlias alias
+//            keyPassword password
+//            storeFile file(filePath)
+//            storePassword(password)
+//        }
+//    }
+//    sourceSets {
+//        main {
+//            jniLibs.srcDirs = ['libs']
+//        }
+//    }
+}
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta5'
+    compile project(':ocr_ui')
+    compile project(':faceplatform-ui')
+    compile 'com.squareup.okhttp3:okhttp:3.5.0'
+//    compile files('libs/xUtils-2.6.14.jar')
+    compile 'com.jiechic.library:xUtils:2.6.14'
+}
